@@ -1,0 +1,154 @@
+main {
+  min-height: 80vh;
+}
+
+.rating span {
+  margin: 0.2rem;
+  display: inline-flex
+}
+
+.rating svg {
+  color: #f8e825;
+}
+
+.rating-text {
+  font-size: 1.3rem;
+  font-weight: 400;
+  padding-left: 0.5rem;
+}
+
+.product-title {
+  height: 2.5em; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow content */
+  text-overflow: ellipsis; /* Add ellipsis for long text */
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+table td,
+table th {
+  text-align: center;
+}
+
+.review {
+  margin-top: 30px;
+}
+
+.review h2 {
+  font-size: 24px;
+  background: #f4f4f4;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.review button {
+  margin-top: 10px;
+}
+
+.carousel-caption {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar {
+  background-color: #0d67b5;
+  color: white;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  padding-top: 20px;
+  left: 0px;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  width: 80%; 
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background-color: #0b5ca4; 
+}
+
+.sidebar-item-icon {
+  margin-right: 10px; 
+}
+
+.sidebar-item-text {
+  font-size: 18px;
+}
+
+.sidebar-item.active {
+  background-color: #0056b3;
+}
+
+.sidebar-toggle {
+  display: none; 
+}
+
+/* Animation for sidebar items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sidebar-item {
+  animation: fadeIn 0.3s ease-out; 
+}
+ 
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; 
+    height: auto; 
+    padding: 0.5rem; 
+    position: fixed; 
+    z-index: 2; 
+  }
+
+  .sidebar-toggle {
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    z-index: 3; 
+  }
+
+  .sidebar-toggle .bar {
+    display: block;
+    width: 25px; 
+    height: 3px; 
+    background-color: white; 
+    margin: 5px 0; 
+    transition: 0.3s; 
+  }
+
+  .sidebar-open .sidebar {
+    transform: translateX(0); 
+  }
+
+  .sidebar-open .sidebar-toggle .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .sidebar-open .sidebar-toggle .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px); 
+  }
+
+  .sidebar-open .sidebar-toggle .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px); 
+  }
+}
